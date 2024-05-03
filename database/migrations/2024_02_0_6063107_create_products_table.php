@@ -15,7 +15,7 @@ return new class extends Migration
             $table->double('harga');
             $table->string('deskripsi');
             $table->unsignedBigInteger('jenis_id');
-            $table->unsignedBigInteger('stok_id');
+            $table->unsignedBigInteger('stok_id')->nullable();
             $table->foreign("jenis_id")->references('id')->on('jenis');
             $table->foreign("stok_id")->references('id')->on('stoks');
             $table->timestamps();
